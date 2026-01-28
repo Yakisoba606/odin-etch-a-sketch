@@ -10,6 +10,7 @@ body {
   align-items: center;
   height: 100vh;
   width: 100%;
+  padding-button: 50px;
 }
 
 .grid-form{
@@ -24,7 +25,8 @@ body {
     font-size: 1.2rem;
 }
 
-#button, #reset-button{
+#button, 
+#reset-button{
   margin: 30px;
   padding: 20px;
   font-size: 1.2rem;
@@ -34,22 +36,25 @@ body {
   transition: all 0.2s ease;
 }
 
-#button, #reset-button:hover {
+#button:hover, 
+#reset-button:hover {
   transform: translateY(-3px);
   filter: brightness(1.1);
 }
 
-#button, #reset-button:active {
+#button:active, 
+#reset-button:active {
   transform: translateY(0);
 }
 
 .sketch-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 800px;
   height: 800px;
+  margin-bottom: 40px;
   border: 2px solid black;
 }
 

@@ -1,41 +1,60 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    background-color: grey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
 }
 
-.sketch-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 800px;
-    height: 800px;
-    background-color: rgb(212, 211, 211);
-}
-
-.sketch-screen{
-    display: flex;
-    flex-direction: row;
+.grid-form{
+    display:flex;
     justify-content: space-around;
-    width: 600px;
-    height: 600px;
+    align-items: center;
 }
 
-.sketch-screen > div{
-    height: 100%;
-    flex: 1 0 auto;
-    display: flex;
-    flex-direction: column;
+#get-grid-number{
+    width: 300px;
+    height: 50px;
+    font-size: 1.2rem;
 }
 
-.sketch-screen > div > *{
-    flex: 1;
+#button, #reset-button{
+  margin: 30px;
+  padding: 20px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border-style: solid;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#button, #reset-button:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+}
+
+#button, #reset-button:active {
+  transform: translateY(0);
+}
+
+.sketch-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+  height: 800px;
+  border: 2px solid black;
+}
+
+.sketch-items {
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
 }

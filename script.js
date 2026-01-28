@@ -1,16 +1,47 @@
-function makeGrids(size){
-    let screen = document.querySelector('.sketch-screen');
-    for(let i=0; i< size; i++){
-        let column = document.createElement('div');
-        column.classList.add('column');
-        for(let j=0; j< size; j++){
-            let row = document.createElement('div');
-            row.classList.add('row');
-            row.style.border='1px solid black';
-            column.appendChild(row);
-        }
-        screen.appendChild(column);
+const btn = document.getElementById('button');
+const resetBtn = document.getElementById('reset-button');
+const gridNumber = document.getElementById('get-grid-number');
+const container = document.querySelector(".sketch-container");
+
+
+btn.addEventListener('click',()=>{
+    const size = parseInt(gridNumber.value);
+
+    if(size>0 && size<=100){
+        makeGrids(size);
+    }else{
+        alert('Please enter between 1 and 100')
     }
+});
+
+resetBtn.addEventListener('click',()=>{
+    
+    const allGrids = document.querySelectorAll('.sketch-items');
+
+    allGrids.forEach( grid => {
+        grid.style.backgroundColor = 'white';
+    })
+});
+
+function makeGrids(size) {
+
+  container.innerHTML = '';
+
+  const total = size * size;
+
+  for (let i = 1; i <= total; i++) {
+    const grid = document.createElement("div");
+    grid.classList.add("sketch-items");
+
+    grid.style.width = `${100 / size}%`;
+    grid.style.height = `${100 / size}%`;
+
+    grid.addEventListener("mouseover", () => {
+      grid.style.backgroundColor = 'black';
+    });
+
+    container.appendChild(grid);
+  }
 }
 
 makeGrids(16);

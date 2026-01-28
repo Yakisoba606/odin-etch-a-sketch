@@ -37,7 +37,10 @@ function makeGrids(size) {
     grid.style.height = `${100 / size}%`;
 
     grid.addEventListener("mouseover", () => {
-      grid.style.backgroundColor = 'black';
+        const r = Math.floor(Math.random()*256);
+        const g = Math.floor(Math.random()*256);
+        const b = Math.floor(Math.random()*256);
+      grid.style.backgroundColor = `rgb(${r},${g},${b})`;
     });
 
     container.appendChild(grid);
